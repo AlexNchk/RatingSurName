@@ -8,7 +8,7 @@ public class NumberWordsSurnameComparator implements Comparator<Person> {
         String[] surname1 = o1.getSurname().split(" ");
         String[] surname2 = o2.getSurname().split(" ");
         if ((surname1.length >= numberWord && surname2.length >= numberWord) || surname1.length == surname2.length) {
-            return 0;
+            return Integer.compare(o1.getSurname().length(), o2.getSurname().length());
         }
         return surname1.length > surname2.length ? 1 : -1;
     }
